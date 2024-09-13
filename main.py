@@ -17,9 +17,14 @@ while not user_win:
         user_number = int(input("🤖 Please, digit a number between 1 and 100: "))
 
         if (user_number == winning_number):
-            print("🥳 Congratulations! You win!")
-            print("🔁 Attempts:", attempts)
+            congratulations = "🥳 Congratulations! You win!"
+            result = "🔁 Attempts: " + str(attempts)
+            print("\n", separator)
+            print(f"*{congratulations.center(46)}*")
+            print(f"*{result.center(46)}*")
+            print(separator)
+            user_win = True;
         else:
-            
+            print(f"\nThe number entered is {"LESS" if user_number < winning_number else "GREATER"} than the winning number\n")
     except ValueError:
-        print("❌ Wrong input! Please, try again.")
+        print("\n❌ Wrong input! Please, try again.\n")
